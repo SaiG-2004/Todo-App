@@ -3,7 +3,6 @@ import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
 import { Tododate } from "./TodoDate";
 
-
 import {
   getLocalStorageTodoData,
   setLocalStorageTodoData,
@@ -30,7 +29,6 @@ export const Todo = () => {
     setTask((prevTask) => [...prevTask, { id, content, checked }]);
   };
 
-
   const handleDeleteTodo = (value) => {
     const updatedTask = task.filter((curTask) => curTask.content !== value);
     setTask(updatedTask);
@@ -51,39 +49,41 @@ export const Todo = () => {
   };
 
   return (
-    
-      <section className="  flex flex-col items-center">
-        <header>
-          <h1 className="font-[Poppins] text-white text-center  text-3xl mt-6 md:text-6xl font-bold">Todo List</h1>
-          <Tododate />
-        </header>
+    <section className="  flex flex-col items-center">
+      <header>
+        <h1 className="font-[Poppins] text-white text-center  text-3xl mt-6 md:text-6xl font-bold">
+          Todo List
+        </h1>
+        <Tododate />
+      </header>
 
-        <TodoForm onAddTodo={handleFormSubmit} />
+      <TodoForm onAddTodo={handleFormSubmit} />
 
-        <div className="m-5">
-          <ul>
-            {task.map((curTask) => {
-              return (
-                <TodoList
-                  key={curTask.id}
-                  data={curTask.content}
-                  checked={curTask.checked}
-                  onHandleDeleteTodo={handleDeleteTodo}
-                  onHandleCheckedTodo={handleCheckedTodo}
-                />
-              );
-            })}
-          </ul>
-        </div>
-        <section>
+      <div className="m-5">
+        <ul>
+          {task.map((curTask) => {
+            return (
+              <TodoList
+                key={curTask.id}
+                data={curTask.content}
+                checked={curTask.checked}
+                onHandleDeleteTodo={handleDeleteTodo}
+                onHandleCheckedTodo={handleCheckedTodo}
+              />
+            );
+          })}
+        </ul>
+      </div>
+      <section>
+        {task.length > 0 && (
           <button
             onClick={handleClearTodoButton}
             className="w-fit bg-red-500 p-2 text-white text-lg md:text-2xl"
           >
             Clear All
           </button>
-        </section>
+        )}
       </section>
-
+    </section>
   );
 };
