@@ -54,7 +54,7 @@ export const Todo = () => {
     
       <section className="  flex flex-col items-center">
         <header>
-          <h1 className="font-[Poppins] text-white text-2xl mt-6 md:text-6xl font-bold">Todo List</h1>
+          <h1 className="font-[Poppins] text-white text-center  text-2xl mt-6 md:text-6xl font-bold">Todo List</h1>
           <Tododate />
         </header>
 
