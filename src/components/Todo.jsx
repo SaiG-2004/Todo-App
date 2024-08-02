@@ -78,7 +78,7 @@ export const Todo = () => {
         <section>
           <button
             onClick={handleClearTodoButton}
-            className="w-fit bg-red-500 p-2 text-white text-2xl"
+            className="w-fit bg-red-500 p-2 text-white text-lg md:text-2xl"
           >
             Clear All
           </button>

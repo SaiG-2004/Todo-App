@@ -21,7 +21,7 @@ export const TodoForm = ({ onAddTodo }) => {
         <form
           onSubmit={handleFormSubmit}
           className="flex justify-between
-           border-4 w-fit rounded-full md:rounded-md mt-4 md:w-[40rem]  "
+           border-4 w-72 sm:w-fit rounded-full md:rounded-md mt-4 md:w-[40rem]  "
         >
           <div>
             <input
@@ -29,13 +29,13 @@ export const TodoForm = ({ onAddTodo }) => {
               autoComplete="off"
               value={inputValue.content}
               onChange={(event) => handleInputChange(event.target.value)}
-              className="rounded-l-full md:rounded-l-md p-3 text-lg w-full md:w-[33rem] "
+              className="rounded-l-full md:rounded-l-md p-3 text-lg w-full h-full md:w-[33rem] "
             />
           </div>
           <div>
             <button
               type="submit"
-              className="bg-blue-400 text-white text-xl p-3 rounded-r-full md:rounded-r-md"
+              className="bg-blue-400 text-white text-sm h-fit md:text-xl p-3 rounded-r-full md:rounded-r-md"
             >
               Add Task{" "}
             </button>
